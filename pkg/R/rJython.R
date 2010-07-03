@@ -5,6 +5,7 @@
 rJython <- function( jython.jar = NULL, modules = NULL ){
 	stopifnot(require(rJava))
 
+
     # Aux function
     
 	system.file. <- function(...) {
@@ -27,9 +28,14 @@ rJython <- function( jython.jar = NULL, modules = NULL ){
     # Adding required python modules to the interpreter
 
     rJython$exec( "import sys" )
+
+    modules <- c( modules, list( system.file.( package = "rJython" ) ) )
+
     modules <- lapply( modules, function( module ) paste( "sys.path.append(", module, ");", sep = '"' ) )
     lapply( modules, rJython$exec )
     
+    rJython$exec( "import simplejson as json" )
+
     rJython
 }
 
