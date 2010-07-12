@@ -1,10 +1,10 @@
 Package: rJython
-Version: 0.0-1
-Date: 2010-27-06
+Version: 0.0-2
+Date: 2010-12-07
 Title: R interface to Python via Jython
 Author: G. Grothendieck and Carlos J. Gil Bellosta
 Maintainer: Carlos J. Gil Bellosta <cgb@datanalytics.com>
 Description: R interface to Python via Jython allowing R to call python code.
-Depends: rJava (>= 0.8-1), rjson
+Depends: rJava (>= 0.8-1), rjson (>= 0.1.9)
 License: GPL-2
 URL: TBA

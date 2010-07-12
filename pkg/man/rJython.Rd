@@ -18,7 +18,7 @@ Their authors are invited to hide the internals of this package in their code at
 \value{
   An object of class rJava that can exectute python code as per the examples below.
 }
-\references{ \url{http://code.google.com/p/sympy/}, \url{http://www.jython.org/Project/, \url{http://www.jython.org/javadoc/org/python/util/PythonInterpreter.html}}
+\references{ \url{http://code.google.com/p/sympy/}, \url{http://www.jython.org/Project/}, \url{http://www.jython.org/javadoc/org/python/util/PythonInterpreter.html}
 }
 \examples{
 
