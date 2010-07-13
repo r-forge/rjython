@@ -23,9 +23,20 @@ Their authors are invited to hide the internals of this package in their code at
 \examples{
 
 rJython <- rJython()
+
+# Now you can use the rJava low level interface
+
 rJython$exec( "a = 2*2" )
 four <- rJython$get("a")
 .jstrVal( four )
+
+# Alternatively, a higher level interface is provided by the rJython package:
+
+a <- 1:4
+jython.assign( rJython, "a", a )
+jython.exec( rJython, "b = len( a )" )
+jython.get( rJython, "b" )
+
 
 \dontrun{
 

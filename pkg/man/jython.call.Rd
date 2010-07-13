@@ -10,7 +10,7 @@
 \arguments{
   \item{rJython}{ rJython interpreter as instantiated by function \code{ rJython } }
   \item{py.foo}{ Name of a python function }
-  \item{...}{ Arguments for the python function }
+  \item{...}{ R objects to pass as arguments to the Python function }
 }
 \details{
     This function runs a python function taking as arguments R objects and returning an R object.
