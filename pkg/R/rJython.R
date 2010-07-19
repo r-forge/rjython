@@ -10,14 +10,14 @@ rJython <- function( jython.jar = NULL, modules = NULL ){
     
 	system.file. <- function(...) {
 		s <- system.file(...)
-		if (.Platform$OS == "windows") gsub("/", "\\", s, fixed = TRUE) else s
+		if (.Platform$OS == "windows") gsub("\\", "/", s, fixed = TRUE) else s
 	}
 
     # Looking for jython jar 
 
     if( is.null( jython.jar ) ) 
-        jython.jar <- Sys.getenv("RSYMPY_JYTHON")
-	if (jython.jar == "")
+        jython.jar <- Sys.getenv("RJYTHON_JYTHON")
+	if (is.null(jython.jar) || jython.jar == "")
 		jython.jar <- system.file.("jython.jar", package = "rJython")
 
     # Starting JVM
@@ -29,8 +29,8 @@ rJython <- function( jython.jar = NULL, modules = NULL ){
 
     rJython$exec( "import sys" )
 
+	if (is.character(modules)) modules <- as.list(modules)
     modules <- c( modules, list( system.file.( package = "rJython" ) ) )
-
     modules <- lapply( modules, function( module ) paste( "sys.path.append(", module, ");", sep = '"' ) )
     lapply( modules, rJython$exec )
     
