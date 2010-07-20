@@ -1,3 +1,9 @@
 This package including jython.jar is covered by the Jython License.
 
 The license's full text can be downloaded from http://www.jython.org/license.html
+
+This package also contains a copy of the simplejson module for Python, covered by 
+the MIT License, whose full text can be downloaded from
+
+http://www.opensource.org/licenses/mit-license.php
+
