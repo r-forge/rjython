@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>R Package rJython</title>
+	<link href="http://r-forge.r-project.org/themes/rforge/styles/estilo1.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<!-- R-Forge Logo -->
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr><td>
+<a href="/"><img src="http://r-forge.r-project.org/themes/rforge/imagesrf/logo.png" border="0" alt="R-Forge Logo" /> </a> </td> </tr>
+</table>
+
+
+<h1>rJython R package</h1>
+
+<p>This package allows the user to call <a href="http://www.python.org">Python</a> from R (technically, <a href="http://www.jython.org">Jython</a>; see below). The shipped version of Jython is 2.5.1, compatible with the same Python version.</p>
+
+<h3>What can be done with it?</h3>
+
+<p>rJython is intended for running Python code from R. R programs and packages can:</p>
+<ul>
+	<li>Pass data to Python: vectors of various types (logical, character, numeric,...), lists, etc.</li>
+	<li>Get data from Python.</li>
+	<li>Call Python code, call Python functions and methods.</li>
+</ul>
+
+<p>Here is a sample session with rJython:</p>
+
+<code>
+
+
+
+</code>
+
+<h3>Who may be interested in it?</h3>
+
+<p>Mainly, users and package developers who want to use functionalities available in Python but not in R.</p> 
+
+<p>There are many modules in Python which could easily extend R functionality if there would be a way to call Python code from R. </p> 
+
+<h3>How does this package relate to rpy and rpy2?</h3>
+
+<p><a href="http://rpy.sourceforge.net/">rpy</a> and <a href="http://rpy.sourceforge.net/rpy2">rpy2</a>, a redesign and rewrite of rpy, are Python interfaces to R. They allow users to call R from Python.</p>
+
+<p>rJython provides the opposite interface.</p> 
+
+<p>Besides, no code from rpy/rpy2 has been used in the development of rJython.</p> 
+
+<h3>How does rJython work?</h3>
+
+<p>rJython, being based on Jython, interfaces Python via Java. Therefore, it depends on package <a href="http://rosuda.org/rJava/">rJava</a>. However, it proves an alternative interface. Only advanced users might be interested on making their own calls to Python via Java directly using rJava rather than using the standard interface provided by the package.</p>
+
+<p>One of the most daunting tasks in building an interface between two languages is provide mechanisms for exchanging different data structures between them. rJython uses <a href="http://www.json.org">json</a>:
+<ol>
+	<li>R/Python objects are dumped into json strings using their respective parsers (<a href=>rjson</a> and <a href=>simplejson</a>) respectively.</li>
+	<li>These strings are passed between the two languages using their string exchange mechanisms.</li>
+	<li>json strings are finally reconstructed into language objects on the other side.</li>
+</ol>
+
+<p>This simple mechanism allow R and Python exchange relatively complex data structures with ease.</p> 
+
+<h3>Is Jython the same language as Python?</h3>
+
+From <a href="http://wiki.python.org/jython/JythonFaq/GeneralInfo">Jython's FAQ pages</a>:
+
+<blockquote><p>Yes. Jython is an implementation of the Python language for the Java platform. Jython 2.5 implements the same language as CPython 2.5, and nearly all of the Core Python standard library modules. (CPython is the C implementation of the Python language.) Jython 2.5 uses the same regression test suite as CPython, with some minor modifications.</p>
+
+<p>There are a number of differences. First, Jython programs cannot use CPython extension modules written in C. These modules usually have files with the extension .so, .pyd or .dll. If you want to use such a module, you should look for an equivalent written in pure Python or Java. Although it is technically feasible to support such extensions - IronPython does so - there are no plans to do so in Jython.</p>
+
+<p>There are a number of other differences between the two implementations that are unlikely to go away. These range from the trivial - Jython's code objects currently do not have a co_code attribute because it is not possible to directly access Java bytecode from a class, without loading the file; to the significant - Jython uses Java's true garbage collection rather than Python's reference counting scheme.</p> </blockquote>
+
+In summary: pure Python modules can be used in Jython; modules including C code, cannot.
+
+<h3>Further info</h3>
+
+<p>The project summary page can be found <a href="http://r-forge.r-project.org/projects/uroot/">here</a>. You may also be interested in its page at <a href="http://crantastic.org/packages/rjython">crantastic</a>.</p>
+
+<p>The package was originally developed by G. Grothendieck and <a href="http://www.datanalytics.com">Carlos J. Gil Bellosta</a>. It uses Jython, that is distributed along with the package, and Python's simplejson module.</p>
+
+</body>
+</html>
+
+
