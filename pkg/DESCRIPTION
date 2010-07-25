@@ -5,10 +5,10 @@ Title: R interface to Python via Jython
 Author: G. Grothendieck and Carlos J. Gil Bellosta (authors of Jython itself
 	are Jim Hugunin, Barry Warsaw, Samuele Pedroni, Brian Zimmer, 
     Frank Wierzbicki and others; Bob Ippolito is the author of the simplejson 
-    Python module )
+    Python module)
 Maintainer: Carlos J. Gil Bellosta <cgb@datanalytics.com>
 Description: R interface to Python via Jython allowing R to call python code.
 SystemRequirements: Java
 Depends: rJava (>= 0.8-1), rjson (>= 0.1.9)
-License: file LICENSE
+License: GPL (>= 2)
 URL: https://r-forge.r-project.org/projects/rjython/
