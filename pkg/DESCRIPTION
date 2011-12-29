@@ -1,6 +1,6 @@
 Package: rJython
-Version: 0.0-3
-Date: 2010-07-19
+Version: 0.0-4
+Date: 2011-12-29
 Title: R interface to Python via Jython
 Author: G. Grothendieck and Carlos J. Gil Bellosta (authors of Jython itself
 	are Jim Hugunin, Barry Warsaw, Samuele Pedroni, Brian Zimmer, 
